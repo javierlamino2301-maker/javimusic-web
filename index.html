@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVIMUSIC - Comunidad Musical</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Fuente distintiva de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-notes" style="top: 10%; left: 10%;">🎵</div>
+    <div class="floating-notes" style="top: 60%; right: 15%; animation-delay: 2s;">🎶</div>
+    <div class="floating-notes" style="bottom: 20%; left: 20%; animation-delay: 4s;">🎸</div>
+
+    <header>
+        <nav>
+            <div class="logo">JAVIMUSIC</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#explorar">Explorar</a></li>
+                <li><a href="#generos">Géneros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#galeria">Galería</a></li>
+            </ul>
+            <div class="user-profile" id="userProfile" style="display: none;">
+                <span class="user-icon">👤</span>
+                <span class="user-name" id="userName"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal de Registro -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <h2>Bienvenido a JAVIMUSIC</h2>
+            <p>Introduce tu nombre para comenzar tu experiencia musical</p>
+            <input type="text" id="userNameInput" placeholder="Tu nombre" maxlength="20">
+            <button class="btn" onclick="registerUser()">Todo listo</button>
+        </div>
+    </div>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Descubre la música que amas</h1>
+            <p>Una comunidad global de amantes de la música. Explora, comparte y conecta con artistas y melómanos de todo el mundo.</p>
+            <button class="btn" onclick="openRegister()">Comenzar ahora</button>
+            
+            <!-- Campo de texto personalizable -->
+            <div class="custom-message-box">
+                <label for="customMessage">Personaliza tu mensaje:</label>
+                <input type="text" id="customMessage" placeholder="Escribe tu mensaje aquí..." maxlength="50">
+                <p class="user-message" id="userMessage">¡La música nos une a todos! 🎵</p>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://www.creatupropiamusica.com/wp-content/uploads/2025/03/El-reggaeton-en-la-cultura-del-remix-como-las-remezclas-ayudaron-a-expandir-el-genero-1000x600.webp" alt="Reggaeton Culture">
+        </div>
+    </section>
+
+    <section class="features" id="explorar">
+        <h2 class="fixed-title">Lo que ofrecemos</h2>
+        <div class="features-grid">
+            <a href="https://open.spotify.com/playlist/1BvscisVXyPZXtDPEPDJV0" target="_blank" rel="noopener noreferrer" title="Accede a nuestra playlist de Spotify con música ilimitada" class="feature-card">
+                <div class="feature-icon">🎧</div>
+                <h3>MÚSICA ILIMITADA</h3>
+                <p>Millones de canciones disponibles las 24 horas del día.</p>
+            </a>
+            <a href="https://malditosmusicos.com/15-artistas-emergentes-que-van-a-revolucionar-la-musica-en-2025/" target="_blank" rel="noopener noreferrer" title="Descubre los artistas emergentes que revolucionarán la música" class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>ARTISTAS EMERGENTES</h3>
+                <p>Descubre nuevos talentos antes que nadie.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nueva sección de Galería con intercambio de imágenes -->
+    <section class="gallery" id="galeria">
+        <h2>Galería Musical</h2>
+        <p class="gallery-instruction">Haz clic en las imágenes para cambiarlas</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500" 
+                     alt="Guitarra en concierto"
+                     class="clickable-image"
+                     data-images='["https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500", "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=500", "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=500"]'
+                     data-index="0">
+                <p>Concierto en vivo</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500" 
+                     alt="Estudio de grabación"
+                     class="clickable-image"
+                     data-images='["https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500", "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=500", "https://images.unsplash.com/photo-1519508234439-4f23643125c1?w=500"]'
+                     data-index="0">
+                <p>Estudio profesional</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500" 
+                     alt="DJ mezclando música"
+                     class="clickable-image"
+                     data-images='["https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500", "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=500", "https://images.unsplash.com/photo-1574169208507-84376144848b?w=500"]'
+                     data-index="0">
+                <p>DJ en acción</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="genres" id="generos">
+        <h2>Explora otros géneros</h2>
+        <div class="genre-tags">
+            <a href="https://www.youtube.com/watch?v=JU5LMG3WFBw" target="_blank" rel="noopener noreferrer" title="Escucha lo mejor del Rock" class="genre-tag">Rock</a>
+            <a href="https://www.youtube.com/watch?v=h_D3VFfhvs4&list=RDh_D3VFfhvs4&start_radio=1" target="_blank" rel="noopener noreferrer" title="Descubre la música Pop más actual" class="genre-tag">Pop</a>
+            <a href="https://www.youtube.com/watch?v=nCzwGVKpjpo&list=RDnCzwGVKpjpo&start_radio=1" target="_blank" rel="noopener noreferrer" title="Reggaetón para bailar sin parar" class="genre-tag">Reggaetón</a>
+            <a href="https://www.youtube.com/watch?v=yIpxrDfX6ek&list=RDyIpxrDfX6ek&start_radio=1" target="_blank" rel="noopener noreferrer" title="Lo mejor del Trap urbano" class="genre-tag">Trap</a>
+            <a href="https://www.youtube.com/watch?v=eJO5HU_7_1w&list=RDeJO5HU_7_1w&start_radio=1" target="_blank" rel="noopener noreferrer" title="Rap con mensaje y ritmo" class="genre-tag">Rap</a>
+            <a href="https://www.youtube.com/watch?v=uMUQMSXLlHM&list=RDuMUQMSXLlHM&start_radio=1" target="_blank" rel="noopener noreferrer" title="Reggae para relajarse" class="genre-tag">Reggae</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-content">
+            <h2>Contacto</h2>
+            <p class="contact-text">¿Tienes alguna pregunta o duda? ¡Estamos aquí para ayudarte!</p>
+            <div class="contact-icon">✉️</div>
+            <p class="contact-email">Escríbenos a: <a href="mailto:javierlamino2301@gmail.com" target="_blank" rel="noopener noreferrer" title="Enviar correo a JAVIMUSIC">javierlamino2301@gmail.com</a></p>
+            
+            <!-- Enlace al repositorio de GitHub -->
+            <div class="github-link">
+                <p>Visita nuestro código en:</p>
+                <a href="https://github.com/TU-USUARIO/javimusic-web" target="_blank" rel="noopener noreferrer" title="Ver el código fuente en GitHub">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32">
+                        <path fill="white" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    GitHub Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JAVIMUSIC - La comunidad de amantes de la música en tendencia 🎵</p>
+        <p class="license-info">📄 Contenido bajo licencia Creative Commons CC0 1.0 Universal</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
