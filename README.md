@@ -25,7 +25,7 @@ javimusic-web/
 └── scripts/
     └── script.js
 
-Tecnologías
+Herramientas utilizadas
 
 HTML5
 CSS3
